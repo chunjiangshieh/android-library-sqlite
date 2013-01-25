@@ -15,7 +15,7 @@ public final class StringTools {
 	 * @return
 	 */
     public static boolean isEmpty(String str) {
-        if (str == null || str.length() == 0) {//使用捷径运算符，只有str != null的时候，才会去检查长度，所以没有NP的风险。
+        if (str == null || str.length() == 0) {
             return true;
         }
         return false;
