@@ -14,15 +14,12 @@ public final class StringTools {
 	 * @param str
 	 * @return
 	 */
-	public static boolean isEmpty(String str) {
-		if (str == null) {
-			return true;
-		} else if (str.length() == 0) {
-			return true;
-		} else {
-			return false;
-		}
-	}
+    public static boolean isEmpty(String str) {
+        if (str == null || str.length() == 0) {
+            return true;
+        }
+        return false;
+    }
 
 	/**
 	 * 判断字符串是否不为空

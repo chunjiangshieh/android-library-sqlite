@@ -1,10 +1,10 @@
 package com.xcj.android.utils;
 
+import android.text.format.DateFormat;
+import android.util.Log;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
-
-import android.text.format.DateFormat;
 
 /**
  * 日期助手
@@ -13,7 +13,8 @@ import android.text.format.DateFormat;
  * @version 1.0
  */
 public class DateTools {
-	private static String format = "yyyy-MM-dd kk.mm.ss";
+	private static String format = "yyyy-MM-dd kk:mm:ss";
+	private static final String TAG = "DateTools";
 
 	/**
 	 * 返回默认的日期格式
@@ -73,7 +74,9 @@ public class DateTools {
 		try {
 			return df.parse(strDate);
 		} catch (ParseException e) {
-			e.printStackTrace();
+			for(StackTraceElement ste : e.getStackTrace()){
+				Log.e(TAG, ste.toString());
+			}
 			return null;
 		}
 	}
